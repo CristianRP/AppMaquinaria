@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">App Maquinaria</string>
+    <string name="action_settings">Settings</string>
+    <string name="btn_check_enginery">Control de\nmaquinaria</string>
+    <string name="btn_repairs">Reparaciones</string>
+    <string name="btn_services">Servicios</string>
+    <string name="btn_performance">Rendimientos</string>
+    <string name="title_activity_list_of_machinery">Listado de maquinaria</string>
+    <string name="title_activity_reparacion">Reparaciones</string>
+
+    <!-- strings reparaciones -->
+    <string name="tv_nombre_maquina">Maquina:</string>
+    <string name="tv_fecha">Fecha:</string>
+    <string name="tv_fecha_paralizacion">Paralización de máquina:</string>
+    <string name="tv_fecha_inicio">Inicio de reparación:</string>
+    <string name="tv_estado_reparacion">Estado:</string>
+    <string name="tv_fecha_fin">Habilitación de máquina:</string>
+    <string name="tv_dias_asignados">Días en proceso</string>
+    <string name="tv_diagnostico">Diagnóstico:</string>
+    <string name="til_fecha_paralizacion">Fecha paralización</string>
+    <string name="til_fecha_inicio">Inicio reparación</string>
+    <string name="til_estado">Estado</string>
+    <string name="til_fecha_fin">Habilitación</string>
+    <string name="til_dias_asignados">Días asignados</string>
+    <string name="til_diagnostico">Diagnostico</string>
+    <string name="btn_save_data">Grabar datos</string>
+    <string name="btn_ingresar_datos">Ingresar nuevo registro</string>
+    <string name="btn_cancel">Cancelar</string>
+
+</resources>
