@@ -26,5 +26,20 @@
     <string name="btn_save_data">Grabar datos</string>
     <string name="btn_ingresar_datos">Ingresar nuevo registro</string>
     <string name="btn_cancel">Cancelar</string>
+    <string name="title_activity_control">Estado actual de maquinaria</string>
+
+    <!-- strings control -->
+    <string name="ti_sitema_electrico">Sistema Electrico</string>
+    <string name="ti_cilindros">Cilindros</string>
+    <string name="ti_bombahd">BombaHD</string>
+    <string name="ti_rodaje_cadena">Rodaje cadena</string>
+    <string name="ti_cuchilla">Cuchilla</string>
+    <string name="ti_llantas">Llantas</string>
+    <string name="ti_mangueras">Mangueras</string>
+    <string name="ti_sillones">Sillones</string>
+    <string name="ti_vidrios">Vidrios</string>
+    <string name="ti_motor">Motor</string>
+    <string name="ti_otros">Otros</string>
+    <string name="title_activity_login">LoginActivity</string>
 
 </resources>

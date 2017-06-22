@@ -98,8 +98,14 @@ public class MaquinariaAdapter
     public void onBindViewHolder(ViewHolder holder, int position) {
         Maquina maquina = mListadoMaquinaria.get(position);
         holder.mIdMachinery.setText(String.valueOf(maquina.getCodigo()));
-        holder.mDescription.setText(maquina.getDescripcion());
-        holder.mKind.setText(maquina.getTipo());
-        holder.mPeriod.setText(maquina.getPeriodoMantenimiento());
+        holder.mDescription.setText(maquina.getTipo());
+        holder.mKind.setText(maquina.getDescripcion());
+        String periodoplaca;
+        if (maquina.getPlaca().isEmpty()) {
+            periodoplaca = "Periodo: " + maquina.getPeriodoMantenimiento();
+        } else {
+            periodoplaca = "Periodo: " + maquina.getPeriodoMantenimiento() + " Placa: " + maquina.getPlaca();
+        }
+        holder.mPeriod.setText(periodoplaca);
     }
 }

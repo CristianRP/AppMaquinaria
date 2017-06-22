@@ -10,6 +10,7 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -214,7 +215,11 @@ public class ListOfMachineryActivity extends AppCompatActivity
     public void onItemClick(MaquinariaAdapter.ViewHolder item, int position) {
         Maquina maquina = Maquina.MAQUINARIA.get(position);
         switch (getIntent().getIntExtra(MODULO, 0)) {
-            case CONTROL: 
+            case CONTROL:
+                Intent control = new Intent(ListOfMachineryActivity.this, ControlActivity.class);
+                control.putExtra("idMaquina", maquina.getIdMaquina());
+                //control.putExtra("idSuper", maquina.)
+                startActivity(control);
                 break;
             case REPARACIONES:
                 Intent reparacion = new Intent(ListOfMachineryActivity.this, ReparacionActivity.class);
@@ -238,4 +243,16 @@ public class ListOfMachineryActivity extends AppCompatActivity
         mRecyclerMaquinaria.setAdapter(mAdapter);
         mAdapter.notifyDataSetChanged();
     }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                finish();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+
 }

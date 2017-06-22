@@ -20,6 +20,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
+        android:visibility="gone"
         app:layout_constraintBaseline_creator="@+id/btnServices"
         app:layout_constraintBottom_toTopOf="@+id/textView5"
         app:layout_constraintHorizontal_bias="0.0"
@@ -38,6 +39,7 @@
         android:layout_marginTop="8dp"
         android:background="@android:color/transparent"
         android:scaleType="fitCenter"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -110,11 +112,12 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <android.support.constraint.Guideline
+        android:id="@+id/guideline4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/guideline4"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.5" />
+        android:visibility="gone"
+        app:layout_constraintGuide_percent="0.64" />
 
     <TextView
         android:id="@+id/tvCheckEnginery"
@@ -158,6 +161,7 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/guideline" />
@@ -173,6 +177,7 @@
         android:textAlignment="center"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textStyle="bold"
+        android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintLeft_toLeftOf="@+id/guideline"
         app:layout_constraintRight_toRightOf="parent" />
