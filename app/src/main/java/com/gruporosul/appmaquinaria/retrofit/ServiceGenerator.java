@@ -1,6 +1,7 @@
 package com.gruporosul.appmaquinaria.retrofit;
 
 import com.google.gson.GsonBuilder;
+import com.gruporosul.appmaquinaria.util.Constants;
 import com.gruporosul.appmaquinaria.util.DateDeserializer;
 
 import java.util.Date;
@@ -22,7 +23,7 @@ public class ServiceGenerator {
 
     private ServiceGenerator() {}
 
-    private static final String API_BASE_URL = "http://200.6.245.76:8097/";
+    private static final String API_BASE_URL = Constants.HOST_NAME;
 
     private static GsonBuilder gsonBuilder = new GsonBuilder()
             .registerTypeAdapter(Date.class, new DateDeserializer());

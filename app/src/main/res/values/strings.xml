@@ -42,4 +42,8 @@
     <string name="ti_otros">Otros</string>
     <string name="title_activity_login">LoginActivity</string>
 
+    <!-- login's strings -->
+    <string name="hint_username">Usuario</string>
+    <string name="hint_password">Contraseña</string>
+
 </resources>
