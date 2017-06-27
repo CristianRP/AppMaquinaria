@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnCheckEnginery)
     void checkModule() {
-        Intent control = new Intent(MainActivity.this, ControlActivity.class);
+        Intent control = new Intent(MainActivity.this, ResumenMaquinaActivity.class);
         control.putExtra(MODULO, CONTROL);
         startActivity(control);
     }
