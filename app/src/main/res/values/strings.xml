@@ -40,11 +40,16 @@
     <string name="ti_vidrios">Vidrios</string>
     <string name="ti_motor">Motor</string>
     <string name="ti_otros">Otros</string>
-    <string name="title_activity_login">LoginActivity</string>
+    <string name="op_buen_estado">B</string>
+    <string name="op_mal_estado">M</string>
+    <string name="op_no_aplica">N/A</string>
 
     <!-- login's strings -->
     <string name="hint_username">Usuario</string>
     <string name="hint_password">Contraseña</string>
     <string name="title_activity_resumen_maquina">ResumenMaquinaActivity</string>
+    <string name="loading_auth">Autenticando&#8230;</string>
 
+    <!-- escanear activity -->
+    <string name="loading_maquinas">Buscando maquina&#8230;</string>
 </resources>

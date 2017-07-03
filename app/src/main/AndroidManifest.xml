@@ -34,8 +34,9 @@
             android:windowSoftInputMode="stateHidden" />
         <activity
             android:name=".activity.LoginActivity"
-            android:label="@string/title_activity_login"
+            android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"
             android:windowSoftInputMode="stateHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -47,7 +48,7 @@
             android:name=".activity.ResumenMaquinaActivity"
             android:label="@string/title_activity_resumen_maquina"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".activity.EscanearApiActivity"></activity>
+        <activity android:name=".activity.EscanearActivity"></activity>
     </application>
 
 </manifest>

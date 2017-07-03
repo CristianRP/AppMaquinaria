@@ -10,6 +10,22 @@
     tools:showIn="@layout/activity_control">
 
 
+    <TextView
+        android:id="@+id/txtMaquina"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:text="RETRO CASE 590-1"
+        android:textAlignment="viewStart"
+        android:textAppearance="@style/TextAppearance.AppCompat.Title"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp" />
+
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -17,7 +33,7 @@
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.50121653"
         tools:layout_editor_absoluteY="0dp"
-        tools:layout_editor_absoluteX="206dp" />
+        tools:layout_editor_absoluteX="180dp" />
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -25,24 +41,23 @@
         android:id="@+id/guideline12"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.13"
-        tools:layout_editor_absoluteY="78dp"
+        tools:layout_editor_absoluteY="66dp"
         tools:layout_editor_absoluteX="0dp" />
 
     <LinearLayout
+        android:id="@+id/linearEstados"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
         android:background="@color/blue_focused"
         android:orientation="horizontal"
         app:layout_constraintBottom_toTopOf="@+id/guideline12"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/guideline10"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintVertical_bias="0.0"
-        android:layout_marginEnd="8dp"
-        android:id="@+id/linearLayout">
+        app:layout_constraintTop_toBottomOf="@+id/txtMaquina">
 
         <TextView
             android:id="@+id/textView"
@@ -76,19 +91,20 @@
     </LinearLayout>
 
     <ScrollView
+        android:id="@+id/scrollViewOpciones"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:layout_marginBottom="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:fillViewport="true"
-        app:layout_constraintTop_toTopOf="@+id/guideline12"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_marginBottom="8dp"
-        android:layout_marginRight="8dp"
-        app:layout_constraintRight_toRightOf="parent"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/guideline12"
         app:layout_constraintVertical_bias="1.0">
 
         <android.support.constraint.ConstraintLayout
@@ -96,42 +112,42 @@
             android:layout_height="wrap_content">
 
             <android.support.constraint.Guideline
+                android:id="@+id/guideline11"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/guideline11"
                 android:orientation="vertical"
                 app:layout_constraintGuide_percent="0.50121653"
-                tools:layout_editor_absoluteY="159dp"
-                tools:layout_editor_absoluteX="206dp" />
+                tools:layout_editor_absoluteX="180dp"
+                tools:layout_editor_absoluteY="147dp" />
 
             <TextView
-            android:id="@+id/tvSistemaElectrico"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:text="@string/ti_sitema_electrico"
-            app:layout_constraintBottom_toBottomOf="@+id/view"
-            android:layout_marginBottom="8dp"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="8dp"
-            android:layout_marginLeft="8dp"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/relativeLayoutSistema"
-            android:layout_marginRight="8dp" />
+                android:id="@+id/tvSistemaElectrico"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="@string/ti_sitema_electrico"
+                app:layout_constraintBottom_toBottomOf="@+id/view"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@+id/relativeLayoutSistema"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutSistema"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                android:layout_marginEnd="8dp">
+                app:layout_constraintTop_toTopOf="parent">
 
                 <info.hoang8f.android.segmented.SegmentedGroup
                     android:id="@+id/segmentedSistema"
@@ -142,7 +158,7 @@
                     android:orientation="horizontal"
                     segmentedgroup:sc_border_width="1dp"
                     segmentedgroup:sc_corner_radius="5dp"
-                    segmentedgroup:sc_tint_color="#009688">
+                    segmentedgroup:sc_tint_color="#1565C0">
 
                     <RadioButton
                         android:id="@+id/btnOkSistema"
@@ -150,7 +166,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="One" />
+                        android:text="@string/op_buen_estado" />
 
                     <RadioButton
                         android:id="@+id/btnFailSistema"
@@ -158,7 +174,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Two" />
+                        android:text="@string/op_mal_estado" />
 
                     <RadioButton
                         android:id="@+id/btnNoSistema"
@@ -166,51 +182,48 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Three" />
+                        android:text="@string/op_no_aplica" />
                 </info.hoang8f.android.segmented.SegmentedGroup>
 
             </RelativeLayout>
 
             <View
+                android:id="@+id/view"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginTop="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutSistema"
-                android:layout_marginLeft="0dp"
+                android:background="#1565C0"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
                 app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/view" />
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutSistema" />
 
             <TextView
                 android:id="@+id/tvCilindro"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:text="@string/ti_cilindros"
                 app:layout_constraintBottom_toBottomOf="@+id/view"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintTop_toTopOf="@+id/separator2"
-                android:layout_marginTop="8dp"
-                android:layout_marginLeft="8dp"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/relativeLayoutCilindro"
-                android:layout_marginRight="8dp" />
+                app:layout_constraintTop_toTopOf="@+id/separator2" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutCilindro"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toTopOf="@id/view"
-                android:layout_marginEnd="8dp">
+                app:layout_constraintTop_toTopOf="@+id/view">
 
                 <info.hoang8f.android.segmented.SegmentedGroup
                     android:id="@+id/segmentedCilindro"
@@ -221,7 +234,7 @@
                     android:orientation="horizontal"
                     segmentedgroup:sc_border_width="1dp"
                     segmentedgroup:sc_corner_radius="5dp"
-                    segmentedgroup:sc_tint_color="#009688">
+                    segmentedgroup:sc_tint_color="#1565C0">
 
                     <RadioButton
                         android:id="@+id/btnOkCilindro"
@@ -229,7 +242,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="One" />
+                        android:text="@string/op_buen_estado" />
 
                     <RadioButton
                         android:id="@+id/btnFailCilindro"
@@ -237,7 +250,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Two" />
+                        android:text="@string/op_mal_estado" />
 
                     <RadioButton
                         android:id="@+id/btnNoCilindro"
@@ -245,40 +258,37 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Three" />
+                        android:text="@string/op_no_aplica" />
                 </info.hoang8f.android.segmented.SegmentedGroup>
 
             </RelativeLayout>
 
             <View
+                android:id="@+id/separator2"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginTop="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutCilindro"
-                android:layout_marginLeft="0dp"
+                android:background="#1565C0"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
                 app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/separator2" />
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutCilindro" />
 
             <TextView
                 android:id="@+id/tvBomba"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/ti_bombahd"
+                app:layout_constraintBottom_toBottomOf="@+id/separator3"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline11"
-                app:layout_constraintTop_toTopOf="@+id/relativeLayoutBomba"
-                android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/separator3"
-                android:layout_marginBottom="8dp" />
+                app:layout_constraintTop_toTopOf="@+id/relativeLayoutBomba" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutBomba"
@@ -286,12 +296,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutCilindro">
 
                 <info.hoang8f.android.segmented.SegmentedGroup
@@ -303,7 +313,7 @@
                     android:orientation="horizontal"
                     segmentedgroup:sc_border_width="1dp"
                     segmentedgroup:sc_corner_radius="5dp"
-                    segmentedgroup:sc_tint_color="#009688">
+                    segmentedgroup:sc_tint_color="#1565C0">
 
                     <RadioButton
                         android:id="@+id/btnOkBomba"
@@ -311,7 +321,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="One" />
+                        android:text="@string/op_buen_estado" />
 
                     <RadioButton
                         android:id="@+id/btnFailBomba"
@@ -319,7 +329,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Two" />
+                        android:text="@string/op_mal_estado" />
 
                     <RadioButton
                         android:id="@+id/btnNoBomba"
@@ -327,40 +337,37 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Three" />
+                        android:text="@string/op_no_aplica" />
                 </info.hoang8f.android.segmented.SegmentedGroup>
 
             </RelativeLayout>
 
             <View
+                android:id="@+id/separator3"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginTop="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutBomba"
-                android:layout_marginLeft="0dp"
+                android:background="#1565C0"
                 app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
                 app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/separator3" />
+                app:layout_constraintTop_toBottomOf="@+id/relativeLayoutBomba" />
 
             <TextView
                 android:id="@+id/tvRodaje"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/ti_rodaje_cadena"
+                app:layout_constraintBottom_toBottomOf="@+id/relativeLayoutRodaje"
                 app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline11"
-                app:layout_constraintTop_toTopOf="@+id/relativeLayoutRodaje"
-                android:layout_marginTop="8dp"
-                app:layout_constraintBottom_toBottomOf="@+id/relativeLayoutRodaje"
-                android:layout_marginBottom="8dp" />
+                app:layout_constraintTop_toTopOf="@+id/relativeLayoutRodaje" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutRodaje"
@@ -368,12 +375,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutBomba">
 
                 <info.hoang8f.android.segmented.SegmentedGroup
@@ -385,7 +392,7 @@
                     android:orientation="horizontal"
                     segmentedgroup:sc_border_width="1dp"
                     segmentedgroup:sc_corner_radius="5dp"
-                    segmentedgroup:sc_tint_color="#009688">
+                    segmentedgroup:sc_tint_color="#1565C0">
 
                     <RadioButton
                         android:id="@+id/btnOkRodaje"
@@ -393,7 +400,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="One" />
+                        android:text="@string/op_buen_estado" />
 
                     <RadioButton
                         android:id="@+id/btnFailRodaje"
@@ -401,7 +408,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Two" />
+                        android:text="@string/op_mal_estado" />
 
                     <RadioButton
                         android:id="@+id/btnNoRodaje"
@@ -409,41 +416,39 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Three" />
+                        android:text="@string/op_no_aplica" />
                 </info.hoang8f.android.segmented.SegmentedGroup>
 
             </RelativeLayout>
 
             <View
+                android:id="@+id/separator4"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginLeft="0dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/separator4"
-                app:layout_constraintHorizontal_bias="0.0"
                 android:layout_marginTop="8dp"
+                android:background="#1565C0"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutRodaje" />
 
             <TextView
                 android:id="@+id/tvCuchilla"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/ti_cuchilla"
+                app:layout_constraintBottom_toBottomOf="@+id/separator5"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline11"
-                android:layout_marginTop="8dp"
-                app:layout_constraintTop_toBottomOf="@+id/separator4"
-                app:layout_constraintBottom_toBottomOf="@+id/separator5"
-                android:layout_marginBottom="8dp" />
+                app:layout_constraintTop_toBottomOf="@+id/separator4" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutCuchilla"
@@ -451,16 +456,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/separator4">
 
                 <info.hoang8f.android.segmented.SegmentedGroup
-                    android:id="@+id/segmentedRodaje"
+                    android:id="@+id/segmentedCuchilla"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -468,65 +473,61 @@
                     android:orientation="horizontal"
                     segmentedgroup:sc_border_width="1dp"
                     segmentedgroup:sc_corner_radius="5dp"
-                    segmentedgroup:sc_tint_color="#009688">
+                    segmentedgroup:sc_tint_color="#1565C0">
 
                     <RadioButton
-                        android:id="@+id/btnOkRodaje"
+                        android:id="@+id/btnOkCuchilla"
                         style="@style/RadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="One" />
+                        android:text="@string/op_buen_estado" />
 
                     <RadioButton
-                        android:id="@+id/btnFailRodaje"
+                        android:id="@+id/btnFailCuchilla"
                         style="@style/RadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Two" />
+                        android:text="@string/op_mal_estado" />
 
                     <RadioButton
-                        android:id="@+id/btnNoRodaje"
+                        android:id="@+id/btnNoCuchilla"
                         style="@style/RadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Three" />
+                        android:text="@string/op_no_aplica" />
                 </info.hoang8f.android.segmented.SegmentedGroup>
 
             </RelativeLayout>
 
             <View
+                android:id="@+id/separator5"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginLeft="0dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/separator5"
+                android:background="#1565C0"
                 app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutCuchilla" />
 
             <TextView
                 android:id="@+id/tvLlantas"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/ti_llantas"
+                app:layout_constraintBottom_toTopOf="@+id/separator6"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline11"
-                app:layout_constraintTop_toTopOf="@+id/relativeLayoutLlantas"
-                android:layout_marginTop="0dp"
-                android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toTopOf="@+id/separator6" />
+                app:layout_constraintTop_toTopOf="@+id/relativeLayoutLlantas" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutLlantas"
@@ -534,12 +535,12 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
+                android:layout_marginTop="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="8dp"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutCuchilla">
 
                 <info.hoang8f.android.segmented.SegmentedGroup
@@ -551,7 +552,7 @@
                     android:orientation="horizontal"
                     segmentedgroup:sc_border_width="1dp"
                     segmentedgroup:sc_corner_radius="5dp"
-                    segmentedgroup:sc_tint_color="#009688">
+                    segmentedgroup:sc_tint_color="#1565C0">
 
                     <RadioButton
                         android:id="@+id/btnOkLlantas"
@@ -559,7 +560,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="One" />
+                        android:text="@string/op_buen_estado" />
 
                     <RadioButton
                         android:id="@+id/btnFailLlantas"
@@ -567,7 +568,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Two" />
+                        android:text="@string/op_mal_estado" />
 
                     <RadioButton
                         android:id="@+id/btnNoLlantas"
@@ -575,41 +576,37 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Three" />
+                        android:text="@string/op_no_aplica" />
                 </info.hoang8f.android.segmented.SegmentedGroup>
 
             </RelativeLayout>
 
             <View
+                android:id="@+id/separator6"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginLeft="0dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/separator6"
+                android:background="#1565C0"
                 app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutLlantas" />
 
             <TextView
                 android:id="@+id/tvMangueras"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/ti_mangueras"
-                android:layout_marginLeft="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/separator7"
+                app:layout_constraintHorizontal_bias="1.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline11"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/separator6"
-                app:layout_constraintHorizontal_bias="1.0"
-                app:layout_constraintBottom_toBottomOf="@+id/separator7"
-                android:layout_marginBottom="8dp" />
+                app:layout_constraintTop_toBottomOf="@+id/separator6" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutMangueras"
@@ -619,14 +616,13 @@
                 android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
                 app:layout_constraintTop_toBottomOf="@+id/separator6">
 
                 <info.hoang8f.android.segmented.SegmentedGroup
-                    android:id="@+id/segmentedLlantas"
+                    android:id="@+id/segmentedMangueras"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="10dp"
@@ -634,65 +630,61 @@
                     android:orientation="horizontal"
                     segmentedgroup:sc_border_width="1dp"
                     segmentedgroup:sc_corner_radius="5dp"
-                    segmentedgroup:sc_tint_color="#009688">
+                    segmentedgroup:sc_tint_color="#1565C0">
 
                     <RadioButton
-                        android:id="@+id/btnOkLlantas"
+                        android:id="@+id/btnOkMangueras"
                         style="@style/RadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="One" />
+                        android:text="@string/op_buen_estado" />
 
                     <RadioButton
-                        android:id="@+id/btnFailLlantas"
+                        android:id="@+id/btnFailMangueras"
                         style="@style/RadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Two" />
+                        android:text="@string/op_mal_estado" />
 
                     <RadioButton
-                        android:id="@+id/btnNoLlantas"
+                        android:id="@+id/btnNoMangueras"
                         style="@style/RadioButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Three" />
+                        android:text="@string/op_no_aplica" />
                 </info.hoang8f.android.segmented.SegmentedGroup>
 
             </RelativeLayout>
 
             <View
+                android:id="@+id/separator7"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginLeft="0dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/separator7"
+                android:background="#1565C0"
                 app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutMangueras" />
 
             <TextView
                 android:id="@+id/tvSillones"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/ti_sillones"
-                android:layout_marginLeft="8dp"
+                app:layout_constraintBottom_toBottomOf="@+id/separator8"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline11"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/separator7"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintBottom_toBottomOf="@+id/separator8"
-                android:layout_marginBottom="8dp" />
+                app:layout_constraintTop_toBottomOf="@+id/separator7" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutSillones"
@@ -702,10 +694,9 @@
                 android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
                 app:layout_constraintTop_toBottomOf="@+id/separator7">
 
                 <info.hoang8f.android.segmented.SegmentedGroup
@@ -717,7 +708,7 @@
                     android:orientation="horizontal"
                     segmentedgroup:sc_border_width="1dp"
                     segmentedgroup:sc_corner_radius="5dp"
-                    segmentedgroup:sc_tint_color="#009688">
+                    segmentedgroup:sc_tint_color="#1565C0">
 
                     <RadioButton
                         android:id="@+id/btnOkSillones"
@@ -725,7 +716,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="One" />
+                        android:text="@string/op_buen_estado" />
 
                     <RadioButton
                         android:id="@+id/btnFailSillones"
@@ -733,7 +724,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Two" />
+                        android:text="@string/op_mal_estado" />
 
                     <RadioButton
                         android:id="@+id/btnNoSillones"
@@ -741,41 +732,37 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Three" />
+                        android:text="@string/op_no_aplica" />
                 </info.hoang8f.android.segmented.SegmentedGroup>
 
             </RelativeLayout>
 
             <View
+                android:id="@+id/separator8"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginLeft="0dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/separator8"
+                android:background="#1565C0"
                 app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutSillones" />
 
             <TextView
                 android:id="@+id/tvVidrios"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/ti_vidrios"
-                android:layout_marginLeft="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/separator9"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline11"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/separator8"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintBottom_toBottomOf="@+id/separator9"
-                android:layout_marginBottom="8dp" />
+                app:layout_constraintTop_toBottomOf="@+id/separator8" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutVidrios"
@@ -785,10 +772,9 @@
                 android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
                 app:layout_constraintTop_toBottomOf="@+id/separator8">
 
                 <info.hoang8f.android.segmented.SegmentedGroup
@@ -800,7 +786,7 @@
                     android:orientation="horizontal"
                     segmentedgroup:sc_border_width="1dp"
                     segmentedgroup:sc_corner_radius="5dp"
-                    segmentedgroup:sc_tint_color="#009688">
+                    segmentedgroup:sc_tint_color="#1565C0">
 
                     <RadioButton
                         android:id="@+id/btnOkVidrios"
@@ -808,7 +794,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="One" />
+                        android:text="@string/op_buen_estado" />
 
                     <RadioButton
                         android:id="@+id/btnFailVidrios"
@@ -816,7 +802,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Two" />
+                        android:text="@string/op_mal_estado" />
 
                     <RadioButton
                         android:id="@+id/btnNoVidrios"
@@ -824,41 +810,37 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Three" />
+                        android:text="@string/op_no_aplica" />
                 </info.hoang8f.android.segmented.SegmentedGroup>
 
             </RelativeLayout>
 
             <View
+                android:id="@+id/separator9"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginLeft="0dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/separator9"
+                android:background="#1565C0"
                 app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutVidrios" />
 
             <TextView
                 android:id="@+id/tvMotor"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/ti_motor"
-                android:layout_marginLeft="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/separator10"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline11"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/separator9"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintBottom_toBottomOf="@+id/separator10"
-                android:layout_marginBottom="8dp" />
+                app:layout_constraintTop_toBottomOf="@+id/separator9" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutMotor"
@@ -868,10 +850,9 @@
                 android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
                 app:layout_constraintTop_toBottomOf="@+id/separator9">
 
                 <info.hoang8f.android.segmented.SegmentedGroup
@@ -883,7 +864,7 @@
                     android:orientation="horizontal"
                     segmentedgroup:sc_border_width="1dp"
                     segmentedgroup:sc_corner_radius="5dp"
-                    segmentedgroup:sc_tint_color="#009688">
+                    segmentedgroup:sc_tint_color="#1565C0">
 
                     <RadioButton
                         android:id="@+id/btnOkMotor"
@@ -891,7 +872,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="One" />
+                        android:text="@string/op_buen_estado" />
 
                     <RadioButton
                         android:id="@+id/btnFailMotor"
@@ -899,7 +880,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Two" />
+                        android:text="@string/op_mal_estado" />
 
                     <RadioButton
                         android:id="@+id/btnNoMotor"
@@ -907,22 +888,19 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="0.33"
-                        android:text="Three" />
+                        android:text="@string/op_no_aplica" />
                 </info.hoang8f.android.segmented.SegmentedGroup>
 
             </RelativeLayout>
 
             <View
+                android:id="@+id/separator10"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginLeft="0dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/separator10"
+                android:background="#1565C0"
                 app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/relativeLayoutMotor" />
 
 
@@ -930,19 +908,18 @@
                 android:id="@+id/tvOtros"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:gravity="center_vertical"
                 android:text="@string/ti_otros"
-                android:layout_marginLeft="16dp"
+                app:layout_constraintBottom_toBottomOf="@+id/separator11"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toLeftOf="@+id/guideline11"
-                android:layout_marginRight="8dp"
-                android:layout_marginTop="0dp"
-                app:layout_constraintTop_toBottomOf="@+id/separator10"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintBottom_toBottomOf="@+id/separator11"
-                android:layout_marginBottom="8dp" />
+                app:layout_constraintTop_toBottomOf="@+id/separator10" />
 
             <EditText
                 android:id="@+id/etOtros"
@@ -952,23 +929,19 @@
                 android:layout_marginRight="8dp"
                 android:gravity="center"
                 android:minHeight="0dp"
+                app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintLeft_toLeftOf="@+id/guideline11"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
                 app:layout_constraintTop_toBottomOf="@+id/separator10" />
 
             <View
+                android:id="@+id/separator11"
                 android:layout_width="0dp"
                 android:layout_height="1dp"
-                android:background="#bc1616"
-                android:layout_marginLeft="0dp"
-                app:layout_constraintLeft_toLeftOf="parent"
-                android:layout_marginRight="0dp"
-                app:layout_constraintRight_toRightOf="parent"
-                android:id="@+id/separator11"
+                android:background="#1565C0"
                 app:layout_constraintHorizontal_bias="0.0"
-                android:layout_marginTop="0dp"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/etOtros" />
 
 

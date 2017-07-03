@@ -1,6 +1,7 @@
 package com.gruporosul.appmaquinaria.activity;
 
 import android.Manifest;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -8,7 +9,6 @@ import android.os.Build;
 import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.widget.Button;
 import android.widget.EditText;
@@ -21,10 +21,13 @@ import com.gruporosul.appmaquinaria.bean.login.SupervisorBody;
 import com.gruporosul.appmaquinaria.bean.login.SupervisorResponse;
 import com.gruporosul.appmaquinaria.retrofit.AppMaquinariaWebAPI;
 import com.gruporosul.appmaquinaria.retrofit.ServiceGenerator;
+import com.gruporosul.appmaquinaria.util.Constants;
+import com.gruporosul.appmaquinaria.util.Encryptor;
 import com.gruporosul.appmaquinaria.util.GlideApp;
 
 import java.io.IOException;
 
+import butterknife.BindString;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
@@ -42,6 +45,8 @@ public class LoginActivity extends AppCompatActivity {
     EditText etUserName;
     @BindView(R.id.btnLogin)
     Button btnLogin;
+    @BindString(R.string.loading_auth)
+    String authText;
 
     private AppMaquinariaWebAPI mMaquinariaAPI;
     private String[] permissions = new String[] {
@@ -50,14 +55,13 @@ public class LoginActivity extends AppCompatActivity {
             Manifest.permission.CAMERA
     };
     int PERMISSION_ALL = 1;
+    private ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
 
         mMaquinariaAPI = ServiceGenerator.createService(AppMaquinariaWebAPI.class);
 
@@ -85,13 +89,18 @@ public class LoginActivity extends AppCompatActivity {
 
     @OnClick(R.id.btnLogin)
     void OnClickLogin() {
-        startActivity(new Intent(LoginActivity.this, MainActivity.class));
-        /*Log.e("Login:", "  " + etPassword.getText().toString());
+        /*mProgressDialog = new ProgressDialog(this);
+        mProgressDialog.setMessage("Autenticando...");
+        mProgressDialog.setCancelable(false);
+        mProgressDialog.show();*/
+        Constants.showDialog(this, authText);
+        //startActivity(new Intent(LoginActivity.this, MainActivity.class));
+        Log.e("Login:", "  " + etPassword.getText().toString());
         SupervisorBody supervisorBody = new SupervisorBody(etUserName.getText().toString(),
-                Encryptor.encrypt(etPassword.getText().toString(), Constants.ENCRYPTOR_KEY));
+                Encryptor.encrypt(etPassword.getText().toString(), Constants.ENCRYPTOR_KEY).trim());
         Log.e("Login:", " Encrypted: " + Encryptor.encrypt(etPassword.getText().toString(), Constants.ENCRYPTOR_KEY));
         Log.e("Login: ", " Decrypted: " + Encryptor.decrypt(Encryptor.encrypt(etPassword.getText().toString(), Constants.ENCRYPTOR_KEY), Constants.ENCRYPTOR_KEY));
-        loginRequest(supervisorBody);*/
+        loginRequest(supervisorBody);
     }
 
     private void loginRequest(SupervisorBody supervisorBody) {
@@ -99,8 +108,15 @@ public class LoginActivity extends AppCompatActivity {
         getSupervisorResponse.enqueue(new Callback<SupervisorResponse>() {
             @Override
             public void onResponse(Call<SupervisorResponse> call, Response<SupervisorResponse> response) {
+                //mProgressDialog.dismiss();
+                Constants.dismissDialog();
                 if (!response.isSuccessful()) {
                     String error = "Ha ocurrido un error. Contacte con el administrador";
+                    if (response.raw().code() == 404) {
+                        Toast.makeText(LoginActivity.this, error, Toast.LENGTH_SHORT).show();
+                        Log.e(LoginActivity.class.getSimpleName(), error);
+                        return;
+                    }
                     if (response.errorBody()
                             .contentType()
                             .subtype()
@@ -116,7 +132,6 @@ public class LoginActivity extends AppCompatActivity {
                     }
                     Toast.makeText(LoginActivity.this, error, Toast.LENGTH_SHORT).show();
                     Log.e(LoginActivity.class.getSimpleName(), error);
-                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
                     return;
                 }
 

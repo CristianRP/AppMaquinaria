@@ -13,10 +13,6 @@
         android:id="@+id/backgroundLogin"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginBottom="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
         android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
@@ -28,28 +24,36 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.1" />
+        app:layout_constraintGuide_percent="0.1"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="36dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.9"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="324dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.11" />
+        app:layout_constraintGuide_percent="0.11"
+        tools:layout_editor_absoluteY="56dp"
+        tools:layout_editor_absoluteX="0dp" />
 
     <android.support.constraint.Guideline
         android:id="@+id/guideline9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.9" />
+        app:layout_constraintGuide_percent="0.9"
+        tools:layout_editor_absoluteY="460dp"
+        tools:layout_editor_absoluteX="0dp" />
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView"
@@ -59,7 +63,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginTop="8dp"
-        app:cardBackgroundColor="@color/cardview_shadow_end_color"
+        app:cardBackgroundColor="#55ffffff"
         app:cardCornerRadius="2dp"
         app:cardElevation="3dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline9"
@@ -67,7 +71,9 @@
         app:layout_constraintLeft_toLeftOf="@+id/guideline6"
         app:layout_constraintRight_toLeftOf="@+id/guideline7"
         app:layout_constraintTop_toTopOf="@+id/guideline8"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -78,74 +84,106 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <Button
-                    android:id="@+id/btnLogin"
-                    style="@android:style/Widget.Material.Button.Colored"
+                <ImageView
+                    android:id="@+id/imageView2"
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="8dp"
+                    android:layout_height="0dp"
+                    android:layout_marginEnd="8dp"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="Iniciar sesión"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etPassword" />
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/lg_grupo_rosul"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toTopOf="@+id/guideline11" />
 
                 <android.support.constraint.Guideline
                     android:id="@+id/guideline11"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    app:layout_constraintGuide_percent="0.35" />
+                    app:layout_constraintGuide_percent="0.3"
+                    tools:layout_editor_absoluteY="262dp"
+                    tools:layout_editor_absoluteX="44dp" />
 
-                <EditText
-                    android:id="@+id/etPassword"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginTop="30dp"
-                    android:ems="10"
-                    android:hint="@string/hint_password"
-                    android:inputType="textPassword"
-                    android:textColor="?android:attr/textColorPrimaryInverse"
-                    android:textColorHint="?android:attr/textColorPrimaryInverse"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/etUserName" />
-
-                <ImageView
-                    android:id="@+id/imageView2"
+                <ScrollView
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:layout_marginBottom="8dp"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginTop="8dp"
-                    app:layout_constraintBottom_toTopOf="@+id/guideline11"
+                    android:fillViewport="true"
+                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:srcCompat="@drawable/lg_grupo_rosul" />
+                    app:layout_constraintTop_toTopOf="@+id/guideline11"
+                    android:layout_marginTop="8dp">
 
-                <EditText
-                    android:id="@+id/etUserName"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="8dp"
-                    android:layout_marginRight="8dp"
-                    android:layout_marginTop="8dp"
-                    android:ems="10"
-                    android:hint="@string/hint_username"
-                    android:inputType="textPersonName"
-                    android:textColor="?android:attr/textColorPrimaryInverse"
-                    android:textColorHint="?android:attr/textColorPrimaryInverse"
-                    app:layout_constraintLeft_toLeftOf="parent"
-                    app:layout_constraintRight_toRightOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/guideline11" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <EditText
+                            android:id="@+id/etUserName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:ems="10"
+                            android:hint="@string/hint_username"
+                            android:inputType="text"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textColorHint="?android:attr/textColorPrimary"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/guideline11" />
+
+                        <EditText
+                            android:id="@+id/etPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="30dp"
+                            android:ems="10"
+                            android:hint="@string/hint_password"
+                            android:inputType="textPassword"
+                            android:textColor="?android:attr/textColorPrimary"
+                            android:textColorHint="?android:attr/textColorPrimary"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/etUserName" />
+
+                        <Button
+                            android:id="@+id/btnLogin"
+                            style="@android:style/Widget.Material.Button.Colored"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginRight="8dp"
+                            android:layout_marginStart="8dp"
+                            android:layout_marginTop="8dp"
+                            android:text="Iniciar sesión"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintLeft_toLeftOf="parent"
+                            app:layout_constraintRight_toRightOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/guideline13" />
+
+                    </LinearLayout>
+                </ScrollView>
+
             </android.support.constraint.ConstraintLayout>
         </ScrollView>
     </android.support.v7.widget.CardView>

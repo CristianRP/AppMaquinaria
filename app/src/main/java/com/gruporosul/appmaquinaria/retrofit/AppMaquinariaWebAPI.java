@@ -45,4 +45,7 @@ public interface AppMaquinariaWebAPI {
     @POST("api/Chequeo")
     Call<Void> postChequeo(@Body ControlBody controlBody);
 
+    @GET("api/Maquinaria")
+    Call<Maquina> getMaquinaEscaneada(@Query("codigoMaquina") String codigoMaquina);
+
 }
