@@ -43,6 +43,8 @@
     <string name="op_buen_estado">B</string>
     <string name="op_mal_estado">M</string>
     <string name="op_no_aplica">N/A</string>
+    <string name="title_dialog">Ingresar comentarios</string>
+    <string name="hint_dialog">Comentarios</string>
 
     <!-- login's strings -->
     <string name="hint_username">Usuario</string>

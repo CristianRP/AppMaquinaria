@@ -145,6 +145,7 @@ public class LoginActivity extends AppCompatActivity {
 
             @Override
             public void onFailure(Call<SupervisorResponse> call, Throwable t) {
+                Constants.dismissDialog();
                 Log.e(LoginActivity.class.getSimpleName(), "Ha ocurrido un error. Contacte con el administrador");
             }
         });

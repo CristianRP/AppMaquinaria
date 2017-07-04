@@ -12,7 +12,7 @@ import com.google.gson.annotations.SerializedName;
 
 public class ControlBody {
 
-    @SerializedName("Id")
+    @SerializedName("CodigoSupervisor")
     @Expose
     private Integer id;
     @SerializedName("CodigoSupervisor")
